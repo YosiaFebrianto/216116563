@@ -36,7 +36,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         //mengisi widget dengan data dari ArrayList
         viewHolder.textView_qty_type.setText(arrOrder.get(i).getQty()+" "+arrOrder.get(i).getType());
         viewHolder.textView_toppings.setText("with Toppings: "+arrOrder.get(i).getToppings());
-        viewHolder.textView_subtotal.setText("Rp"+arrOrder.get(i).getSubtotal());
+        viewHolder.textView_subtotal.setText("Rp "+arrOrder.get(i).getSubtotal());
     }
 
     @Override
