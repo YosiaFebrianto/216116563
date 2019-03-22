@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         adapter=new OrderAdapter(arrOrder,new RVClickListener(){
             @Override
             public void recyclerViewListClicked(View v, int posisi) {
+                cbPearl.setChecked(false);cbPudding.setChecked(false);
+                cbRedBean.setChecked(false);cbCoconut.setChecked(false);
                 index = posisi;
                 if (rbTea.getText().toString().equalsIgnoreCase(arrOrder.get(index).getType())) {
                     rbTea.setChecked(true);
@@ -64,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     rbCoffee.setChecked(true);
                 } else if (rbTea.getText().toString().equalsIgnoreCase(arrOrder.get(index).getType())) {
                     rbSmoothies.setChecked(true);
-                }cbPearl.setChecked(false);cbPudding.setChecked(false);
-                cbRedBean.setChecked(false);cbCoconut.setChecked(false);
+                }
                 for(int i = 0; i < arrOrder.get(index).getToppings().size(); i++) {
                     if (arrOrder.get(index).getToppings().get(i).equalsIgnoreCase(cbPearl.getText().toString())){
                         cbPearl.setChecked(true);
@@ -160,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getBaseContext(),
                             "Subtotal " + subtotal,
                             Toast.LENGTH_SHORT).show();
-                    txtName.setText(edName.getText());
+                    txtName.setText("Hi,"+edName.getText()+"!");
                     RecyclerView.LayoutManager lm =new LinearLayoutManager(MainActivity.this);
                     rvOrder.setLayoutManager(lm);
                     rvOrder.setAdapter(adapter);
@@ -178,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 total=0;
                 txtTotal.setText(""+total);
-                txtName.setText("Cust");
+                txtName.setText("Hi,Cust!");
                 edName.setText("");
                 txtQty.setText("1");
                 rbTea.setChecked(true);
