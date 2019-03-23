@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     rbTea.setChecked(true);
                 } else if (rbCoffee.getText().toString().equalsIgnoreCase(arrOrder.get(index).getType())) {
                     rbCoffee.setChecked(true);
-                } else if (rbTea.getText().toString().equalsIgnoreCase(arrOrder.get(index).getType())) {
+                } else if (rbSmoothies.getText().toString().equalsIgnoreCase(arrOrder.get(index).getType())) {
                     rbSmoothies.setChecked(true);
                 }
                 for(int i = 0; i < arrOrder.get(index).getToppings().size(); i++) {
